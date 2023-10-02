@@ -1,0 +1,38 @@
+<div class="container text-center my-4">
+  <!-- Welcome Message -->
+  <div class="alert alert-warning">
+   <h2> Welcome to your Pictures</h2>
+  </div>
+  <!-- Color Boxes -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="p-3 border bg-primary"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-success"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-danger"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-warning"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-info"></div>
+    </div>
+  </div>
+  <!-- Images Display -->
+  <div class="row justify-content-center">
+    <div *ngFor="let image of allImages" class="col-lg-4 col-md-6 mb-4">
+      <div class="image-box">
+        <img [src]="'http://localhost:8080/images/' + image.id" alt="{{image.imageDetails}}" />
+        <p class="image-details">{{image.imageDetails}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link to navigate to the PictureUpdateComponent -->
+  <div class="alert alert-warning mt-4">
+    <a routerLink="/upload">Add a Picture</a>
+  </div>
+</div>

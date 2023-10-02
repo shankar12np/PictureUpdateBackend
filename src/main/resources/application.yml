@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Springboot
+    username: postgres
+    password: Sanu0303$
+    driver-class-name: org.postgresql.Driver
+
+upload:
+  dir: /Users/shankar/documents/Project-images-2

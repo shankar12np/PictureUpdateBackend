@@ -1,0 +1,19 @@
+<div class="container text-center mt-5">
+  <div class="alert alert-warning">
+    <h2 class="text-success"> Upload your best moment for life</h2>
+  </div>
+
+  <div class="upload-section mt-4">
+    <div class="form-group">
+      <input type="file" (change)="onFileSelected($event)" class="form-control-file">
+    </div>
+    &nbsp;
+
+    <div class="form-group">
+
+      <input type="text" [(ngModel)]="imageDetails" placeholder="Enter image details" class="form-control">
+    </div>
+
+    <button (click)="onSubmit()" class="btn btn-primary">Upload</button>
+  </div>
+</div>

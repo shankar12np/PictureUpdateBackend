@@ -1,0 +1,17 @@
+.image-box {
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 15px;
+  background-color: #f8f9fa; /* Bootstrap's light gray background */
+}
+
+.image-box img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.image-details {
+  padding: 5px;
+}
