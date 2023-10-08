@@ -1,0 +1,16 @@
+.active {
+  font-weight: bold;
+}
+/* Add this CSS to your stylesheet */
+.nav-link .nav-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid transparent;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-link .nav-button:hover {
+  background-color: #007bff; /* Change to your desired hover background color */
+  color: #fff; /* Change to your desired hover text color */
+  border: 1px solid #007bff; /* Change to your desired hover border color */
+}

@@ -1,0 +1,61 @@
+<div class="container text-center my-4">
+  <!-- Registration Message -->
+  <div class="alert alert-warning">
+    <h2>Registration</h2>
+  </div>
+
+  <!-- Color Boxes -->
+  <div class="row mt-4">
+    <div class="col">
+      <div class="p-3 border bg-primary"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-success"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-danger"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-warning"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-info"></div>
+    </div>
+  </div>
+  &nbsp;
+
+  <!-- Registration Form -->
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" formControlName="firstName" class="form-control" id="firstName" placeholder="Enter first name" required>
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" formControlName="lastName" class="form-control" id="lastName" placeholder="Enter last name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter email" required>
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" formControlName="username" class="form-control" id="username" placeholder="Enter username" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" formControlName="password" class="form-control" id="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-success">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="placeholder spacer"></div>

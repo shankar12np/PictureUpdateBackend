@@ -15,3 +15,8 @@
 .image-details {
   padding: 5px;
 }
+/* Add this CSS to your stylesheet */
+.page-container {
+  background-color: lightblue; /* Light gray background color */
+  padding: 20px; /* Add padding for spacing */
+}

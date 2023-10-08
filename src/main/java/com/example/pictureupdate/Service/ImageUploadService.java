@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -75,6 +76,23 @@ public class ImageUploadService implements ImageSRV {
     public List<ImageUpload> findAll(){
         return imageUploadRepository.findAll();
     }
+    public void deleteImage(Long id) {
+        if (imageUploadRepository.existsById(id)) {
+            ImageUpload image = imageUploadRepository.findById(id).orElse(null);
+            if (image != null) {
+                Path pathOfFile = Paths.get(image.getFilePath());
+                try {
+                    Files.deleteIfExists(pathOfFile);  // This will delete the file from the file system
+                } catch (IOException e) {
+                    throw new RuntimeException("Failed to delete the file from the file system", e);
+                }
+                imageUploadRepository.deleteById(id);  // This will delete the record from the database
+            }
+        } else {
+            throw new RuntimeException("Image with ID " + id + " does not exist.");
+        }
+    }
+
 
 
 }

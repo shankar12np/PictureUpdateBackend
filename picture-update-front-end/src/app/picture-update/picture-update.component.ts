@@ -58,10 +58,27 @@ export class PictureUpdateComponent implements OnInit {
     this.pictureUpdateService.uploadImage(this.selectedFile, this.imageUpload).subscribe(
       response => {
         console.log('Upload successful:', response);
-
-        this.router.navigate(['/']);
+        alert('Image uploaded successfully!');
+        this.router.navigate(['/welcome']);
 
 
       })
   }
+
+  deleteImage(imageId: number) {
+    // Confirm with the user
+    if (confirm('Are you sure you want to delete this image?')) {
+      // Call your service to delete the image
+      this.pictureUpdateService.deleteImage(imageId).subscribe(response => {
+        // If success, remove the image from the array
+        this.allImages = this.allImages.filter(image => image.id !== imageId);
+        // You can show a success message here if you want
+      }, error => {
+        // Handle errors here, e.g. show an error message
+        console.error("Error deleting image:", error);
+      });
+    }
+  }
+
+
 }

@@ -11,7 +11,7 @@ import org.antlr.v4.runtime.misc.NotNull;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "picture-login-entity")
+@Table(name = "loginP")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

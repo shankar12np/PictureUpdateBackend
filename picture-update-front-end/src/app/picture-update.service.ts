@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {ImageUpload} from "./models/image-upload.model";
+
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class PictureUpdateService {
 
   private readonly baseUrl: string = 'http://localhost:8080';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient ) { }
 
   uploadImage(file: File, imageUpload: ImageUpload): Observable<any> {
     const formData: FormData = new FormData();
@@ -32,6 +33,22 @@ export class PictureUpdateService {
 
   getAllImages(): Observable<ImageUpload[]>{
     return this.http.get<ImageUpload[]>(this.baseUrl + '/images/all')
+  }
+
+  deleteImage(imageId: number): Observable<any> {
+    const url = this.baseUrl + "/images/" + imageId;
+    return this.http.delete(url, { headers: this.getAuthHeaders() });
+  }
+
+
+  private getAuthHeaders() {
+    let token = localStorage.getItem('token');
+    if (token) {
+      return new HttpHeaders({
+        'Authorization': 'Bearer ' + token
+      });
+    }
+    return {};
   }
 
 }

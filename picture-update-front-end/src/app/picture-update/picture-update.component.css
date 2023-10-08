@@ -1,0 +1,53 @@
+.spacer {
+  padding-bottom: 123px;  /* adjust value as needed */
+}
+.collar-box {
+  background-color: lightslategrey; /* Light green color */
+  padding: 20px;
+  position: relative;
+  width: 80%;
+  margin: 50px auto; /* Space it out a bit and center */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* A subtle shadow for the main box */
+}
+
+.collar-box:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 1px solid #d0d0d0;
+  z-index: -1;
+}
+@keyframes glowingEffect {
+  0% {
+    box-shadow: 0 0 5px #f7dc6f, 0 0 10px #f7dc6f, 0 0 15px #f5b041, 0 0 20px #f5b041, 0 0 25px #f5b041, 0 0 30px #f5b041, 0 0 35px #f5b041;
+  }
+  25% {
+    box-shadow: 0 0 5px #e74c3c, 0 0 10px #e74c3c, 0 0 15px #e67e22, 0 0 20px #e67e22, 0 0 25px #e67e22, 0 0 30px #e67e22, 0 0 35px #e67e22;
+  }
+  50% {
+    box-shadow: 0 0 5px #3498db, 0 0 10px #3498db, 0 0 15px #2980b9, 0 0 20px #2980b9, 0 0 25px #2980b9, 0 0 30px #2980b9, 0 0 35px #2980b9;
+  }
+  75% {
+    box-shadow: 0 0 5px #2ecc71, 0 0 10px #2ecc71, 0 0 15px #27ae60, 0 0 20px #27ae60, 0 0 25px #27ae60, 0 0 30px #27ae60, 0 0 35px #27ae60;
+  }
+  100% {
+    box-shadow: 0 0 10px #f7dc6f, 0 0 20px #f7dc6f, 0 0 30px #f5b041, 0 0 40px #f5b041, 0 0 50px #f5b041, 0 0 60px #f5b041, 0 0 70px #f5b041;
+  }
+}
+
+
+.glowing-box {
+  animation: glowingEffect 1.5s infinite alternate;
+}
+/*.collar-box {*/
+/*  background: linear-gradient(45deg, #f7dc6f, #f5b041);*/
+/*  !* ... rest of the collar-box styles ... *!*/
+/*}*/
+
+.glowing-box {
+  animation: glowingEffect 1.5s infinite alternate;
+  color: white; /* Making sure any text inside is readable */
+}

@@ -1,0 +1,74 @@
+<div class="container text-center my-4">
+  <!-- Login Message -->
+  <div class="alert alert-warning">
+    <h2>Login to Access Your Pictures</h2>
+  </div>
+
+  <!-- Color Boxes -->
+  <div class="row mt-4">
+    <div class="col">
+      <div class="p-3 border bg-body-secondary"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-danger-subtle"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-dark-subtle"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-warning-subtle"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-info-subtle"></div>
+    </div>
+  </div>
+  &nbsp;
+<!-- ... (previous code) ... -->
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <form (submit)="onSubmit()">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" [(ngModel)]="user.username" name="username" class="form-control" id="username" placeholder="Enter username" required>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" [(ngModel)]="user.password" name="password" class="form-control" id="password" placeholder="Enter password" required>
+          </div>
+          <button type="submit" class="btn btn-warning">Login</button>
+          &nbsp;
+          <!-- Add Register Button -->
+          <button type="button" class="btn btn-success" (click)="navigateToRegister()">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="placeholder"></div>
+  <!-- Color Boxes -->
+  <div class="row mt-4">
+    <div class="col">
+      <div class="p-3 border bg-body-secondary"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-danger-subtle"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-dark-subtle"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-warning-subtle"></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-info-subtle"></div>
+    </div>
+  </div>
+  &nbsp;
+</div>
+<div class="placeholder spacer"></div>
+
+
+<!-- ... (rest of your code) ... -->
